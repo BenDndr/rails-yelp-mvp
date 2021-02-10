@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.lesechos.com/api/v1/images/view/5e85bdc5d286c271f555c2d5/976x549-webp/0603030558747-web-tete.webp);">
+  <div class="container">
+    <h1>Yield du Pauvre</h1>
+    <p>Les meilleurs restaurants</p>
+    <%= link_to "Create Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="container">
+ <ul>
+   <% @restaurants.each do |restaurant| %>
+     <div class="card-product">
+      <img src="https://source.unsplash.com/random" />
+      <div class="card-product-infos">
+        <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+        <p><%= restaurant.category %></p>
+        <span><%= restaurant.phone_number %></span>
+        <span><%= restaurant.address %></span>
+      </div>
+    </div>
+  <% end %>
+ </ul>
+</div>
+
+
